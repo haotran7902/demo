@@ -13,13 +13,8 @@ import {
   Monitor,
   Check,
 } from "lucide-react";
-
-type SettingTab = "theme" | "language";
-
-const LANGUAGES = [
-  { id: "en", label: "English", flag: "🇺🇸" },
-  { id: "vi", label: "Tiếng Việt", flag: "🇻🇳" },
-];
+import { SettingTab, SettingTabItem } from "./common/type";
+import { LANGUAGES } from "./common/const";
 
 export default function SettingsModal({
   isOpen,
@@ -34,15 +29,11 @@ export default function SettingsModal({
     theme: selectedTheme,
     setTheme: setSelectedTheme,
   } = useTheme();
-  const { t, locale, setLocale } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   if (!isOpen) return null;
 
-  const settingTabs: {
-    id: SettingTab;
-    label: string;
-    icon: React.ReactNode;
-  }[] = [
+  const settingTabs: SettingTabItem[] = [
     {
       id: "theme",
       label: t("1005"),
@@ -79,7 +70,7 @@ export default function SettingsModal({
       onClick={onClose}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-in" />
+      <div className="absolute inset-0 bg-black/50 animate-fade-in" />
 
       {/* Modal */}
       <div
@@ -116,7 +107,7 @@ export default function SettingsModal({
           {/* User Info + Logout */}
           <div className="p-3 border-t border-zinc-200 dark:border-zinc-800">
             <div className="flex items-center gap-3 px-3 py-2 mb-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
+              <div className="w-8 h-8 rounded-full bg-linear-to-br from-violet-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
                 H
               </div>
               <div className="min-w-0">
@@ -159,15 +150,21 @@ export default function SettingsModal({
             {activeTab === "theme" && (
               <ThemeSettings
                 selected={selectedTheme}
-                onSelect={setSelectedTheme}
+                onSelect={(id) =>
+                  setSelectedTheme(
+                    id as "light" | "dark" | "system",
+                  )
+                }
                 themes={themes}
                 description={t("1007")}
               />
             )}
             {activeTab === "language" && (
               <LanguageSettings
-                selected={locale}
-                onSelect={setLocale}
+                selected={i18n.language}
+                onSelect={(lang) =>
+                  i18n.changeLanguage(lang)
+                }
                 description={t("1011")}
               />
             )}
