@@ -12,9 +12,11 @@
   "1010": "System",
   "1011": "Select the language for the interface. This will change all menus and messages.",
   "1012": "Log out",
-  "1013": "NEO playground",
-  "1014": "Home",
-  "1015": "Neo",
-  "1016": "Playground",
+  "1013": "AI Playground",
+  "1014": "Chat",
+  "1015": "Deep Dive",
+  "1016": "Image Pro",
+  "1018": "Meeting Minutes Pro",
+  "1019": "Patent Analysis",
   "1017": "© 2026 AI Playground. All rights reserved."
 }

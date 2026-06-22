@@ -1,7 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRightFromLine, Settings } from "lucide-react";
+import {
+  ArrowLeftFromLine,
+  ArrowRightFromLine,
+  Settings,
+} from "lucide-react";
 import SettingsModal from "@/components/SettingsModal";
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -18,7 +22,7 @@ export default function AppSidebar({
   return (
     <div className="flex h-screen w-full bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 overflow-hidden">
       <aside
-        className={`bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 transition-all duration-300 ease-in-out relative flex flex-col shrink-0 ${
+        className={`bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 transition-all duration-[3000ms] ease-in-out relative flex flex-col shrink-0 ${
           isOpen ? "w-[320px]" : "w-[64px]"
         }`}
       >
@@ -35,10 +39,11 @@ export default function AppSidebar({
             className="p-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors shrink-0"
             title={isOpen ? t("1001") : t("1002")}
           >
-            <ArrowRightFromLine
-              size={20}
-              className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-            />
+            {isOpen ? (
+              <ArrowLeftFromLine size={20} className="transition"/>
+            ) : (
+              <ArrowRightFromLine size={20}  className="transition"/>
+            )}
           </button>
         </div>
         <div className="flex-1 overflow-y-auto overflow-x-hidden p-4">
