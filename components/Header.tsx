@@ -27,23 +27,23 @@ export default function Header({
   ];
 
   return (
-    <header className="sticky top-0 z-50 flex justify-center px-6">
+    <header id="main-header" className="sticky custom-bg top-0 z-50 flex justify-center px-6">
       <div
         className={`transition-all duration-300 overflow-hidden ${
           isVisible
-            ? "pt-4 max-h-[100px] opacity-100"
+            ? "py-3 max-h-[100px] opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="inline-flex items-center gap-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl px-2 py-2">
+        <nav className="inline-flex items-center gap-1 custom-bg-content custom-border custom-text rounded-3xl px-2 py-2">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
               className={`px-4 py-2 cursor-pointer rounded-3xl text-sm font-medium transition-colors duration-300 ${
                 activeTab === tab.id
-                  ? "text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 shadow-sm"
-                  : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-white dark:hover:bg-zinc-800"
+                  ? "bg-white dark:bg-zinc-800 shadow-sm"
+                  : "dark:hover:text-zinc-100 hover:bg-white dark:hover:bg-zinc-800"
               }`}
             >
               {t(tab.labelKey)}

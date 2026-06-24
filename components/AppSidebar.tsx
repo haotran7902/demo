@@ -24,7 +24,7 @@ export default function AppSidebar({
   return (
     <div className="flex h-screen w-full bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 overflow-hidden">
       <aside
-        className={`bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 transition-all duration-[3000ms] ease-in-out relative flex flex-col shrink-0 ${
+        className={`bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 relative flex flex-col shrink-0 ${
           isOpen ? "w-[320px]" : "w-[48px]"
         }`}
       >

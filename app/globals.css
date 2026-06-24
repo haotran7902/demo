@@ -37,22 +37,25 @@
 }
 
 .custom-bg {
-  @apply bg-zinc-100 dark:bg-zinc-800;
+  @apply bg-gray-50 dark:bg-slate-800;
+}
+
+.custom-bg-content {
+  @apply bg-gray-100 dark:bg-slate-600;
+}
+
+.custom-bg-content-hover {
+  @apply hover:bg-gray-300 dark:hover:bg-slate-500;
 }
 
 .custom-border {
-  @apply border-zinc-200 dark:border-zinc-800;
+  @apply border border-slate-500 dark:border-gray-500 rounded-3xl;
 }
 
 .custom-text {
-  @apply text-zinc-700 dark:text-zinc-300;
+  @apply text-gray-900 dark:text-gray-100;
 }
 
 .custom-hover-bg {
-  @apply hover:bg-zinc-200 dark:hover:bg-zinc-700;
+  @apply hover:bg-gray-300 dark:hover:bg-slate-800;
 }
-
-.custom-hover-text {
-  @apply dark:hover:text-white;
-}
-

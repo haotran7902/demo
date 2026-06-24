@@ -25,7 +25,7 @@ export default function MainContent({ activeTab }: MainContentProps) {
   };
 
   return (
-    <main className="flex-1 px-6 py-2">
+    <main className="grow px-6 custom-bg">
       {renderContent()}
     </main>
   );

@@ -16,7 +16,7 @@ export default function DeepDive() {
     useState(false);
 
   return (
-    <div className="flex flex-col gap-8 min-h-screen text-slate-50 font-sans">
+    <div className="flex flex-col min-h-screen text-slate-50 font-sans">
       <DeepDiveHeader />
 
       <div className="flex justify-center items-center my-12 p-8 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.15)_0%,transparent_70%)] relative z-10">
