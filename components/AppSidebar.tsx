@@ -3,7 +3,9 @@
 import { useState } from "react";
 import {
   ArrowLeftFromLine,
+  ArrowLeftToLine,
   ArrowRightFromLine,
+  ArrowRightToLine,
   Settings,
 } from "lucide-react";
 import SettingsModal from "@/components/SettingsModal";
@@ -23,7 +25,7 @@ export default function AppSidebar({
     <div className="flex h-screen w-full bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 overflow-hidden">
       <aside
         className={`bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 transition-all duration-[3000ms] ease-in-out relative flex flex-col shrink-0 ${
-          isOpen ? "w-[320px]" : "w-[64px]"
+          isOpen ? "w-[320px]" : "w-[48px]"
         }`}
       >
         <div
@@ -36,13 +38,13 @@ export default function AppSidebar({
           )}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors shrink-0"
+            className="p-1.5 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors shrink-0"
             title={isOpen ? t("1001") : t("1002")}
           >
             {isOpen ? (
-              <ArrowLeftFromLine size={20} className="transition"/>
+              <ArrowLeftToLine size={18} className="transition"/>
             ) : (
-              <ArrowRightFromLine size={20}  className="transition"/>
+              <ArrowRightToLine size={18}  className="transition"/>
             )}
           </button>
         </div>

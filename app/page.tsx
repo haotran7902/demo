@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MainContent from "@/components/MainContent";
 
-export type TabId = "docs" | "play" | "tools" | "about" | "settings";
+export type TabId = "docs" | "deep-dive" | "tools" | "about" | "settings";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>("docs");

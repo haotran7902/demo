@@ -35,3 +35,24 @@
 .animate-scale-in {
   animation: scale-in 0.2s ease-out;
 }
+
+.custom-bg {
+  @apply bg-zinc-100 dark:bg-zinc-800;
+}
+
+.custom-border {
+  @apply border-zinc-200 dark:border-zinc-800;
+}
+
+.custom-text {
+  @apply text-zinc-700 dark:text-zinc-300;
+}
+
+.custom-hover-bg {
+  @apply hover:bg-zinc-200 dark:hover:bg-zinc-700;
+}
+
+.custom-hover-text {
+  @apply dark:hover:text-white;
+}
+
