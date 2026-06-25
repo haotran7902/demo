@@ -36,7 +36,7 @@ export default function DeepDiveHeader() {
 
   return (
     <div
-      className="sticky z-40 custom-bg py-2 text-[12px] text-zinc-700 dark:text-zinc-300"
+      className="sticky z-40 custom-bg text-[12px] text-zinc-700 dark:text-zinc-300"
       style={{ top: headerHeight }}
     >
       <div className="flex justify-between items-center py-2">
@@ -59,7 +59,7 @@ export default function DeepDiveHeader() {
         </div>
         <div className="flex-1"></div>
       </div>
-      <hr className="custom-border" />
+      <hr className="border-b border-gray-500 dark:border-slate-500" />
 
       <div className="relative w-[180px] mx-auto z-20 pt-2">
         <button

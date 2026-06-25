@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import DeepDiveHeader from "./deep-dive-header";
+import DeepDiveIntro from "./deep-dive-intro";
 
 export default function DeepDive() {
   const [chatDropdownOpen, setChatDropdownOpen] =
@@ -19,32 +20,7 @@ export default function DeepDive() {
     <div className="flex flex-col min-h-screen text-slate-50 font-sans">
       <DeepDiveHeader />
 
-      <div className="flex justify-center items-center my-12 p-8 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.15)_0%,transparent_70%)] relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center w-full max-w-[1200px] bg-white/5 p-12 rounded-[24px] border border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.2)] gap-8">
-          <div className="md:col-start-2 flex flex-col items-center text-center max-w-[500px]">
-            <h2 className="text-6xl font-extrabold mb-4 bg-linear-to-br from-indigo-100 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(168,85,247,0.4)]">
-              Deepdive
-            </h2>
-            <p className="text-xl text-slate-300 mb-4 leading-relaxed">
-              Khám phá sâu hơn vào dữ liệu của bạn để tìm ra
-              những insight giá trị ẩn giấu bên trong.
-            </p>
-            <p className="text-base text-slate-400 leading-relaxed">
-              Sử dụng các công cụ phân tích nâng cao để đưa
-              ra quyết định chính xác.
-            </p>
-          </div>
-          <div className="md:col-start-3 flex justify-center md:justify-end">
-            <Image
-              src="/deepdive_illustration.png"
-              alt="Deepdive Illustration"
-              width={350}
-              height={350}
-              className="rounded-[20px] shadow-[0_10px_30px_rgba(168,85,247,0.3)] object-cover animate-[float_6s_ease-in-out_infinite]"
-            />
-          </div>
-        </div>
-      </div>
+      <DeepDiveIntro />
 
       {/* Giao diện 4: Action Buttons */}
       <div className="flex justify-center gap-6 my-8 flex-wrap z-10">
