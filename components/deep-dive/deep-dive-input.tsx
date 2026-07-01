@@ -1,15 +1,35 @@
 "use client";
 
 import { Send, Globe } from "lucide-react";
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
 
-export default function DeepDiveInput() {
+interface DeepDiveInputProps {
+  onSendMessage?: (message: string) => void;
+  isLoading?: boolean;
+}
+
+export default function DeepDiveInput({ onSendMessage, isLoading }: DeepDiveInputProps) {
   const { t } = useTranslation();
   const [mode, setMode] = useState<"basic" | "depth">(
     "basic",
   );
   const [webSearch, setWebSearch] = useState(false);
+  const [text, setText] = useState("");
+
+  const handleSend = () => {
+    if (text.trim() && !isLoading) {
+      onSendMessage?.(text.trim());
+      setText("");
+    }
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
 
   return (
     <div className="pb-4 flex justify-center z-10 w-full">
@@ -36,6 +56,10 @@ export default function DeepDiveInput() {
 
         {/* Middle: Text Area */}
         <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={handleKeyDown}
+          disabled={isLoading}
           className="p-3 border-x border-slate-400 w-full bg-transparent custom-text text-base outline-none placeholder:text-gray-400 dark:placeholder:text-gray-500 resize-none min-h-[72px]"
           rows={5}
           placeholder={t("1032")}
@@ -62,7 +86,13 @@ export default function DeepDiveInput() {
             </div>
           </div>
 
-          <button className="flex items-center justify-center w-11 h-11">
+          <button 
+            onClick={handleSend}
+            disabled={isLoading || !text.trim()}
+            className={`flex items-center justify-center w-11 h-11 rounded-full transition-colors ${
+              text.trim() && !isLoading ? "text-blue-500 hover:bg-slate-300 dark:hover:bg-slate-600" : "text-gray-400 cursor-not-allowed"
+            }`}
+          >
             <Send size={18} />
           </button>
         </div>
