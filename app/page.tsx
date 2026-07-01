@@ -11,7 +11,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>("docs");
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen justify-around">
       <Header activeTab={activeTab} onTabChange={setActiveTab} />
       <MainContent activeTab={activeTab} />
       <Footer />

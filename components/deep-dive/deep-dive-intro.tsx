@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function DeepDiveIntro() {
   return (
-    <section className="flex flex-col my-12 relative z-10 w-full max-w-5xl mx-auto gap-8">
+    <section className="flex flex-col relative z-10 w-full max-w-5xl mx-auto gap-8">
       <h1 className="text-4xl font-extrabold custom-text mb-2">
         DeepDive
       </h1>
