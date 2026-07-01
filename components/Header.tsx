@@ -56,7 +56,7 @@ export default function Header({
         <button
           onClick={() => setIsVisible(!isVisible)}
           className="p-1.5 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors shrink-0"
-          title={isVisible ? "Hide Header" : "Show Header"}
+          title={isVisible ? t("1034") : t("1035")}
         >
           {isVisible ? (
             <ArrowUpToLine size={16} />

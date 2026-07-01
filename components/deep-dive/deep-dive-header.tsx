@@ -1,3 +1,4 @@
+import { useTranslation } from "@/hooks/useTranslation";
 import {
   ChevronDown,
   ChevronUp,
@@ -5,9 +6,10 @@ import {
   PieChart,
   Presentation,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function DeepDiveHeader() {
+  const { t } = useTranslation();
   const [chatDropdownOpen, setChatDropdownOpen] =
     useState(false);
   const [headerHeight, setHeaderHeight] = useState(70);
@@ -41,20 +43,20 @@ export default function DeepDiveHeader() {
     >
       <div className="flex justify-between items-center py-2">
         <div className="flex-1 text-2xl font-bold text-zinc-900 dark:text-white">
-          Project Name
+          {t("1020")}
         </div>
         <div className="p-0.5 flex custom-bg-content custom-border gap-2 w-fit justify-center custom-text">
           <button className={buttonClass}>
             <MessageSquare size={12} />
-            <span>Chat</span>
+            <span>{t("1014")}</span>
           </button>
           <button className={buttonClass}>
             <PieChart size={12} />
-            <span>Report</span>
+            <span>{t("1021")}</span>
           </button>
           <button className={buttonClass}>
             <Presentation size={12} />
-            <span>Slide</span>
+            <span>{t("1022")}</span>
           </button>
         </div>
         <div className="flex-1"></div>
@@ -68,7 +70,7 @@ export default function DeepDiveHeader() {
             setChatDropdownOpen(!chatDropdownOpen)
           }
         >
-          <span>Chat history</span>
+          <span>{t("1023")}</span>
           {chatDropdownOpen ? (
             <ChevronUp size={20} />
           ) : (

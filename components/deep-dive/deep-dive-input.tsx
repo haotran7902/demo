@@ -2,8 +2,10 @@
 
 import { Send, Globe } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function DeepDiveInput() {
+  const { t } = useTranslation();
   const [mode, setMode] = useState<"basic" | "depth">(
     "basic",
   );
@@ -20,7 +22,7 @@ export default function DeepDiveInput() {
               mode === "basic" ? "custom-bg" : ""
             }`}
           >
-            Basic Mode
+            {t("1030")}
           </button>
           <button
             onClick={() => setMode("depth")}
@@ -28,7 +30,7 @@ export default function DeepDiveInput() {
               mode === "depth" ? "custom-bg" : ""
             }`}
           >
-            Depth Mode
+            {t("1031")}
           </button>
         </div>
 
@@ -36,7 +38,7 @@ export default function DeepDiveInput() {
         <textarea
           className="p-3 border-x border-slate-400 w-full bg-transparent custom-text text-base outline-none placeholder:text-gray-400 dark:placeholder:text-gray-500 resize-none min-h-[72px]"
           rows={5}
-          placeholder="Nhập câu hỏi hoặc yêu cầu phân tích của bạn..."
+          placeholder={t("1032")}
         />
 
         {/* Bottom: Toggles & Send */}
@@ -55,7 +57,7 @@ export default function DeepDiveInput() {
             <div className="flex items-center space-x-1.5 custom-text opacity-80 group-hover:opacity-100 transition-opacity">
               <Globe size={18} />
               <span className="text-sm font-medium">
-                Search Web
+                {t("1033")}
               </span>
             </div>
           </div>
